@@ -1,13 +1,13 @@
-﻿using Microsoft.AspNet.Identity;
+﻿using System;
+using System.Threading.Tasks;
+using Microsoft.AspNet.Identity;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Owin;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
-[assembly: OwinStartup(typeof(HepsiBurada.WEB.UI.App_Start.Startup))]
+
+
+[assembly: OwinStartup(typeof(HepsiBurada.WEB.UI.App_Start.StartUp))]
 namespace HepsiBurada.WEB.UI.App_Start
 {
     public class StartUp
