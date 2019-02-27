@@ -16,5 +16,7 @@ namespace HepsiBurada.MODELS.IdentityModels
         [StringLength(60)]
         [Required]
         public string Surname { get; set; }
+        public string ActivationCode { get; set; }
+        public string AvatarPath { get; set; }
     }
 }
