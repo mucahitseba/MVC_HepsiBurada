@@ -75,8 +75,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\Notebook.cs" />
+    <Compile Include="Entities\NotebookYorum.cs" />
+    <Compile Include="Enums\Elektronik.cs" />
     <Compile Include="Enums\IdentityRoles.cs" />
+    <Compile Include="Enums\Notebook\NotebookAgirlik.cs" />
+    <Compile Include="Enums\Notebook\NotebookEkranKartiHafiza.cs" />
+    <Compile Include="Enums\Notebook\NotebookEkranKartiMarka.cs" />
+    <Compile Include="Enums\Notebook\NotebookGarantiSuresi.cs" />
+    <Compile Include="Enums\Notebook\NotebookHarddisk.cs" />
+    <Compile Include="Enums\Notebook\NotebookIslemci.cs" />
+    <Compile Include="Enums\Notebook\NotebookIsletimSistemi.cs" />
+    <Compile Include="Enums\Notebook\NotebookKlavye.cs" />
+    <Compile Include="Enums\Notebook\NotebookMarka.cs" />
     <Compile Include="Enums\MessageStates.cs" />
+    <Compile Include="Enums\Notebook\NotebookRam.cs" />
+    <Compile Include="Enums\Notebook\NotebookRamTipi.cs" />
     <Compile Include="IdentityModels\Role.cs" />
     <Compile Include="IdentityModels\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
