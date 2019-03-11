@@ -1,0 +1,207 @@
+﻿@using Microsoft.AspNet.Identity
+@model HepsiBurada.MODELS.ViewModels.NotebookViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayoutMain.cshtml";
+}
+
+<br/>
+@if (TempData["Message"] != null)
+{
+    <div class="alert alert-success">
+        <p><strong>Başarılı!</strong> @TempData["Message"]</p>
+    </div>
+}
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#product_view"><i class="fa fa-search"></i> Yeni Notebook Ekle</button>
+
+@using (Html.BeginForm("NotebookKayit", "Bilgisayar", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+
+    @Html.AntiForgeryToken()
+    @Html.Hidden("AdminId", HttpContext.Current.User.Identity.GetUserId())
+
+    <!------ Include the above in your HEAD tag ---------->
+    <div class="modal fade product_view" id="product_view">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <a href="#" data-dismiss="modal" class="class pull-right"><span class="glyphicon glyphicon-remove"></span></a>
+                    <h3 class="modal-title">Notebook Kayıt İşlemi</h3>
+                </div>
+                <div class="text text-red">@Html.ValidationSummary()</div>
+                <div class="modal-body">
+                    <div class="row">
+
+                        <div class="col-md-12 product_content">
+
+                            <div>
+                                <div class="col-md-5">
+                                    @Html.LabelFor(x => x.Elektronik)
+                                </div>
+                                <div class="col-md-7">
+                                    @Html.EnumDropDownListFor(x => x.Elektronik, new { @class = "form-control", type = "text", placeholder = "Lütfen Arıza Hakkında Açıklama Yapiniz" })
+                                </div>
+                            </div>
+                            <br />
+                            <div>
+                                <div class="col-md-5">
+                                    @Html.LabelFor(x => x.NotebookMarka)
+                                </div>
+                                <div class="col-md-7">
+                                    @Html.EnumDropDownListFor(x => x.NotebookMarka, new { @class = "form-control", type = "text", placeholder = "Lütfen Arıza Hakkında Açıklama Yapiniz" })
+                                </div>
+                            </div>
+                            <br />
+                            <div>
+                                <div class="col-md-5">
+                                    @Html.LabelFor(x => x.NotebookIslemci)
+                                </div>
+                                <div class="col-md-7">
+                                    @Html.EnumDropDownListFor(x => x.NotebookIslemci, new { @class = "form-control", type = "text", placeholder = "Lütfen Arıza Hakkında Açıklama Yapiniz" })
+                                </div>
+                            </div>
+                            <br />
+                            <div>
+                                <div class="col-md-5">
+                                    @Html.LabelFor(x => x.NotebookRam)
+                                </div>
+                                <div class="col-md-7">
+                                    @Html.EnumDropDownListFor(x => x.NotebookRam, new { @class = "form-control", type = "text", placeholder = "Lütfen Arıza Hakkında Açıklama Yapiniz" })
+                                </div>
+                            </div>
+                            <br />
+                            <div>
+                                <div class="col-md-5">
+                                    @Html.LabelFor(x => x.NotebookRamTipi)
+                                </div>
+                                <div class="col-md-7">
+                                    @Html.EnumDropDownListFor(x => x.NotebookRamTipi, new { @class = "form-control", type = "text", placeholder = "Lütfen Arıza Hakkında Açıklama Yapiniz" })
+                                </div>
+                            </div>
+                            <br />
+                            <div>
+                                <div class="col-md-5">
+                                    @Html.LabelFor(x => x.NotebookHarddisk)
+                                </div>
+                                <div class="col-md-7">
+                                    @Html.EnumDropDownListFor(x => x.NotebookHarddisk, new { @class = "form-control", type = "text", placeholder = "Lütfen Arıza Hakkında Açıklama Yapiniz" })
+                                </div>
+                            </div>
+                            <br />
+                            <div>
+                                <div class="col-md-5">
+                                    @Html.LabelFor(x => x.NotebookEkranKartiMarka)
+                                </div>
+                                <div class="col-md-7">
+                                    @Html.EnumDropDownListFor(x => x.NotebookEkranKartiMarka, new { @class = "form-control", type = "text", placeholder = "Lütfen Arıza Hakkında Açıklama Yapiniz" })
+                                </div>
+                                <br />
+                            </div>
+                            <br />
+                            <div>
+                                <div class="col-md-5">
+                                    @Html.LabelFor(x => x.NotebookEkranKartiHafiza)
+                                </div>
+                                <div class="col-md-7">
+                                    @Html.EnumDropDownListFor(x => x.NotebookEkranKartiHafiza, new { @class = "form-control", type = "text", placeholder = "Lütfen Arıza Hakkında Açıklama Yapiniz" })
+                                </div>
+                            </div>
+                            <br />
+                            <div>
+                                <div class="col-md-5">
+                                    @Html.LabelFor(x => x.NotebookKlavye)
+                                </div>
+                                <div class="col-md-7">
+                                    @Html.EnumDropDownListFor(x => x.NotebookKlavye, new { @class = "form-control", type = "text", placeholder = "Lütfen Arıza Hakkında Açıklama Yapiniz" })
+                                </div>
+                            </div>
+                            <br />
+                            <div>
+                                <div class="col-md-5">
+                                    @Html.LabelFor(x => x.NotebookAgirlik)
+                                </div>
+                                <div class="col-md-7">
+                                    @Html.EnumDropDownListFor(x => x.NotebookAgirlik, new { @class = "form-control", type = "text", placeholder = "Lütfen Arıza Hakkında Açıklama Yapiniz" })
+                                </div>
+                            </div>
+                            <br />
+                            <div>
+                                <div class="col-md-5">
+                                    @Html.LabelFor(x => x.NotebookIsletimSistemi)
+                                </div>
+                                <div class="col-md-7">
+                                    @Html.EnumDropDownListFor(x => x.NotebookIsletimSistemi, new { @class = "form-control", type = "text", placeholder = "Lütfen Arıza Hakkında Açıklama Yapiniz" })
+                                </div>
+                            </div>
+                            <br />
+                            <div>
+                                <div class="col-md-5">
+                                    @Html.LabelFor(x => x.NotebookGarantiSuresi)
+                                </div>
+                                <div class="col-md-7">
+                                    @Html.EnumDropDownListFor(x => x.NotebookGarantiSuresi, new { @class = "form-control", type = "text", placeholder = "Lütfen Arıza Hakkında Açıklama Yapiniz" })
+                                </div>
+                            </div>
+                            <br />
+                            <div>
+                                <div class="col-md-5">
+                                    @Html.LabelFor(x => x.PostedFileNotebookResim1)
+                                </div>
+                                <div class="col-md-7">
+                                    @Html.TextBoxFor(x => x.PostedFileNotebookResim1, new { @class = "form-control", type = "file", multiple = false })
+                                    <br /><span class="text-red">@Html.ValidationMessageFor(x => x.NotebookResim1)</span>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="col-md-5">
+                                    @Html.LabelFor(x => x.PostedFileNotebookResim2)
+                                </div>
+                                <div class="col-md-7">
+                                    @Html.TextBoxFor(x => x.PostedFileNotebookResim2, new { @class = "form-control", type = "file", multiple = false })
+                                </div>
+                            </div>
+                            <div>
+                                <div class="col-md-5">
+                                    @Html.LabelFor(x => x.PostedFileNotebookResim3)
+                                </div>
+                                <div class="col-md-7">
+                                    @Html.TextBoxFor(x => x.PostedFileNotebookResim3, new { @class = "form-control", type = "file", multiple = false })
+                                </div>
+                            </div>
+                            <div>
+                                <div class="col-md-5">
+                                    @Html.LabelFor(x => x.NotebookStok)
+                                </div>
+                                <div class="col-md-7">
+                                    @Html.TextBoxFor(x => x.NotebookStok, new { @class = "form-control", type = "number", multiple = false })
+                                </div>
+                            </div>
+                            <div>
+                                <div class="col-md-5">
+                                    @Html.LabelFor(x => x.NotebookFiyat)
+                                </div>
+                                <div class="col-md-7">
+                                    @Html.TextBoxFor(x => x.NotebookFiyat, new { @class = "form-control", type = "text", multiple = false })
+                                </div>
+                            </div>
+
+
+
+
+
+
+                            <div class="space-ten"></div>
+                            <div class="btn-ground">
+                                <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-floppy-saved"></span> Ürün Ekle</button>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+

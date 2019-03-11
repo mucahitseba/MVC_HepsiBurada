@@ -76,6 +76,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Helpers\EntityHelper.cs" />
     <Compile Include="Helpers\StringHelper.cs" />
     <Compile Include="Identity\MembershipTools.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

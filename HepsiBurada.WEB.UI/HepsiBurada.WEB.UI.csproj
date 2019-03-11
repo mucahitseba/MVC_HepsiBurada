@@ -793,6 +793,7 @@
     <Compile Include="App_Start\Startup.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\BilgisayarController.cs" />
     <Compile Include="Controllers\PartialController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -935,6 +936,8 @@
     <Content Include="vendor\bootstrap\css\bootstrap.css.map" />
     <Content Include="vendor\bootstrap\css\bootstrap.min.css.map" />
     <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Bilgisayar\Index.cshtml" />
+    <Content Include="Views\Bilgisayar\NotebookKayit.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

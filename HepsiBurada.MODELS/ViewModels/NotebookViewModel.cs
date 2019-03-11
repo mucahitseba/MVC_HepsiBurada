@@ -1,21 +1,20 @@
-﻿using System;
+﻿using HepsiBurada.MODELS.Entities;
+using HepsiBurada.MODELS.Enums;
+using HepsiBurada.MODELS.Enums.Notebook;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using HepsiBurada.MODELS.Enums;
-using HepsiBurada.MODELS.Enums.Notebook;
+using System.Web;
 
-namespace HepsiBurada.MODELS.Entities
+namespace HepsiBurada.MODELS.ViewModels
 {
-    [Table("Bilgisayar")]
-    public class Notebook
+    public class NotebookViewModel
     {
         [Key]
-
         [DisplayName("Notebook ID")]
         public Guid NotebookID { get; set; } = Guid.NewGuid();
         [DisplayName("Ürün Tipi")]
@@ -42,24 +41,24 @@ namespace HepsiBurada.MODELS.Entities
         public NotebookIsletimSistemi NotebookIsletimSistemi { get; set; }
         [DisplayName("Notebook Garanti Süresi")]
         public NotebookGarantiSuresi NotebookGarantiSuresi { get; set; }
-        [StringLength(100, ErrorMessage = "Ürün Resmi Seçiniz", MinimumLength = 3)]
         [DisplayName("Notebook Resmi Ekleyiniz :")]
         public string NotebookResim1 { get; set; }
-        [StringLength(100, ErrorMessage = "Ürün Resmi Seçiniz", MinimumLength = 3)]
+        [DisplayName("Ürünün Resmini Ekleyiniz.")]
+        public HttpPostedFileBase PostedFileNotebookResim1 { get; set; }
         [DisplayName("Notebook Resmi Ekleyiniz :")]
         public string NotebookResim2 { get; set; }
-        [StringLength(100, ErrorMessage = "Ürün Resmi Seçiniz", MinimumLength = 3)]
+        [DisplayName("Ürünün Resmini Ekleyiniz.")]
+        public HttpPostedFileBase PostedFileNotebookResim2 { get; set; }
         [DisplayName("Notebook Resmi Ekleyiniz :")]
         public string NotebookResim3 { get; set; }
-        
+        [DisplayName("Ürünün Resmini Ekleyiniz.")]
+        public HttpPostedFileBase PostedFileNotebookResim3 { get; set; }
         [DisplayName("Notebook Fiyatı")]
         public decimal NotebookFiyat { get; set; }
-        
         [DisplayName("Notebook Stok")]
         public int NotebookStok { get; set; }
         public string AdminID { get; set; }
         public DateTime EklenmeTarihi { get; set; } = DateTime.Now;
         public virtual ICollection<NotebookYorum> NotebookYorum { get; set; } = new HashSet<NotebookYorum>();
-
     }
 }

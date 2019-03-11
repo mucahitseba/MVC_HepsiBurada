@@ -108,6 +108,13 @@ namespace HepsiBurada.WEB.UI.Controllers
         {
             return View();
         }
+        [HttpGet]
+        public ActionResult Logout()
+        {
+            var authManager = HttpContext.GetOwinContext().Authentication;
+            authManager.SignOut();
+            return RedirectToAction("Login", "Account");
+        }
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Login(LoginViewModel model)
@@ -132,7 +139,7 @@ namespace HepsiBurada.WEB.UI.Controllers
                     IsPersistent = model.RememberMe
                 }, userIdentity);
 
-                return RedirectToAction("Index", "Admin");
+                return RedirectToAction("Index", "Bilgisayar");
             }
             catch (Exception ex)
             {

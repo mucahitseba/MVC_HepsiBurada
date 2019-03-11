@@ -1,4 +1,6 @@
-﻿<div class="navbar-content clearfix">
+﻿@using HepsiBurada.BLL.Identity
+@using Microsoft.AspNet.Identity
+<div class="navbar-content clearfix">
     <ul class="nav navbar-top-links pull-left">
         <!--Navigation toogle button-->
         <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
@@ -183,7 +185,7 @@
         <li id="dropdown-user" class="dropdown">
             <a href="#" data-toggle="dropdown" class="dropdown-toggle text-right">
                 <span class="pull-right"> <img class="img-circle img-user media-object" src="~/img/av1.png" alt="Profile Picture"> </span>
-                <div class="username hidden-xs">John Doe</div>
+                <div class="username hidden-xs">@MembershipTools.GetNameSurname(null)</div>
             </a>
             <div class="dropdown-menu dropdown-menu-right with-arrow">
                 <!-- User dropdown menu -->
@@ -198,7 +200,7 @@
                         <a href="#">  <i class="fa fa-gear fa-fw"></i> Settings </a>
                     </li>
                     <li>
-                        <a href="#"> <i class="fa fa-sign-out fa-fw"></i> Logout </a>
+                        <a href=@Url.Action("Logout","Account")> <i class="fa fa-sign-out fa-fw"></i> Logout </a>
                     </li>
                 </ul>
             </div>
